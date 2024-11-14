@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-app-argo-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Teeworks1/test-app.git
+    targetRevision: HEAD
+    path: test-app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-app
+  syncPolicy:
+    syncOptions:
+    -  CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true

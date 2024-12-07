@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: test-app
+spec:
+  containers:
+  - name: busybox
+    image: mysql
+    command:
+    - sleep
+    - '100'

@@ -10,3 +10,18 @@ spec:
     command:
     - sleep
     - '100'
+
+
+    #az aks get-credentials --resource-group <resource-group-name> --name <cluster-name>
+    #docker run --name <name of application> <localport>:<container port>
+    #docker-compose up --build
+    #docker network ls
+    #docker exec -it -u root <container name>  U CAN PING ANY OTHER CONTAINER IN THE NETWORK
+    #kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+    #helm repo add <label of the repo> <link to the repo>
+    # helm install <name of application>  <name of repo>/<name of package>
+    #artifacthub.io
+    # helm show values <repo-name>/<name of package> | grep -i <value to grep>
+    #helm upgrade prometheus-release prom-repo/kube-prometheus-stack  --set grafana.adminPassword=admin 
+    #helm upgrade monitoring prom-repo/kube-prometheus-stack --values=prom-values.yaml
+    #$ helm pull argo/argo-cd  --untar=true

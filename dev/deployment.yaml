@@ -18,6 +18,13 @@ spec:
       containers:
       - name: nginx
         image: nginx:1.14.2
+        env:
+        # Define the environment variable
+        - name: PLAYER_INITIAL_LIVES 
+          valueFrom:
+            configMapKeyRef:
+              name: dev-demo           # The ConfigMap this value comes from.
+              key: app_color # The key to fetch.
         ports:
         - containerPort: 80
           name: http
